@@ -212,37 +212,45 @@ h2 {
     background: #867fc2;
   }
   
-  /* Two-column gallery layout */
-  .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-    gap: 10px;
+  /* Adjustments for the About page content */
+  .about-container {
     padding: 10px;
-    max-width: 100%;
-    margin: 0 auto;
-  }
-  
-  .card {
-    width: 100%;
-    height: auto;
-    margin: 0;
   }
 
-  .card img {
-    width: 100%;
-    height: auto;
+  .about-photo {
+    max-width: 200px;
   }
   
-  /* Position the illustration to "kiss" the gallery */
+  .description {
+    font-size: 1rem;
+    margin: 15px auto;
+  }
+
+  /* Contact form adjustments for better mobile display */
+  .contact-form {
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    width: 100%; /* Make form elements fill the full width */
+    max-width: 400px; /* A reasonable max-width for smaller screens */
+  }
+
+  /* Illustration positioning to "kiss" the Send button */
   .illustration-area {
-    margin-top: -15px; /* Negative margin pulls the illustration up */
+    margin-top: -30px; /* Use a negative margin to pull the illustration up */
+    position: relative;
     text-align: center;
   }
   
   .illustration-character {
-    width: clamp(300px, 90vw, 500px);
+    width: clamp(250px, 70vw, 400px); /* Smaller size for the illustration */
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: translateY(0); /* Reset any previous transform */
+    transform: translateY(0);
   }
 }
