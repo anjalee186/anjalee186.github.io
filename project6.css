@@ -1,0 +1,76 @@
+
+
+main {
+  max-width: 1006px;
+  margin: 12px auto 48px;
+  padding: 0 20px;
+  font-family: Rubik, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: #2a2a2a;
+}
+
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #6b6ca8;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+.manual-description {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+}
+
+.single {
+  margin-bottom: 30px;
+}
+
+.single img {
+  width: 100%;
+  max-width: 796px; /* max width same as img 1's width */
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.side-by-side {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.side-by-side img {
+  flex: 1 1 45%;
+  max-width: 400px; 
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  box-sizing: border-box;
+}
+
+.img-wide {
+  max-width: 800px;
+  width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@media (max-width: 600px) {
+  .side-by-side img {
+    flex-basis: 100%;
+    max-width: 100%;
+  }
+}

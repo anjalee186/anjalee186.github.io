@@ -1,0 +1,43 @@
+
+
+
+main {
+  max-width: 1006px;
+  margin: 12px auto 48px;
+  padding: 0 20px;
+  font-family: Rubik, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: #2a2a2a;
+}
+
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #6b6ca8;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+.manual-description {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+}
+
+.wildcup-images {
+  max-width: 600px;  
+  margin: 0 auto;    
+  display: flex;
+  flex-direction: column;
+  gap: 24px;         
+}
+
+.wildcup-images img {
+  width: 100%;       
+  height: auto;      
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+}

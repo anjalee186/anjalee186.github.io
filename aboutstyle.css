@@ -1,0 +1,238 @@
+
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+html, 
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Rubik, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    line-height: 1.4;
+    color: #2a2a2a;
+    background: #fff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Branding */
+.branding {
+    text-align: center;
+    margin: 20px 0 20px;
+}
+
+/* .brand-logo {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 6px 18px rgba(0,0,0,.06);
+} */
+
+.brand-logo img {
+    width: 120px;
+    height: auto;
+    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sub {
+    font-size: .85rem;
+    color: #a19fc7;
+    margin: 4px 0 0;
+}
+
+/* Nav wrap & title */
+/* The page-title sits visually on top of the lilac header */
+.nav-wrap {
+    text-align: center;
+    margin-bottom: 1px;
+    position: relative;
+}
+
+.page-title {
+    display: inline-block;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #6b6ca8;
+    margin: 0;
+    background: #fff;
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+    transform: translateY(-18px);
+}
+
+.site-nav {
+    width: 990px;
+    height: 52px;
+    margin: -8px auto;
+    background: #867fc2;
+    border-radius: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.site-nav a {
+    padding: 8px 14px;
+    color: #fff;
+    border-radius: 2px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.site-nav a:focus {
+    outline: 3px solid rgba(255,255,255,.2);
+    outline-offset: 2px;
+}
+
+.site-nav a:hover {
+    background-color: #fbf739;
+    color: #2a2a2a; 
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.page-title {
+    margin: 10px 0;
+}
+
+.about-container {
+    text-align: center; 
+    max-width: 900px;
+    margin: 0 auto; 
+    padding: 20px;
+}
+
+.about-photo {
+    max-width: 300px;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+}
+
+.description {
+    margin: 20px auto;
+    max-width: 700px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+h2 {
+    color: #867fc2;
+}
+
+.contact-form {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 80%;              /* same as input and textarea */
+    max-width: 500px;        /* same as input and textarea */
+    padding: 10px;
+    background-color:#867fc2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #fbf739;
+    color: #2a2a2a; 
+}
+
+/* Illustration area */
+.illustration-area{
+    margin-top:2px;
+    position:relative;
+    text-align:center}
+
+/*.illustration-bg{height:180px;background:linear-gradient(180deg,#efecfb,#dedaf2);border-top:6px solid rgba(107,108,168,.25);overflow:hidden;border-radius:4px;margin:0 auto;max-width:1006px}*/
+
+.illustration-character{
+    display:block;
+    transform:translateY(-15px)}
+
+.illustration-character{
+    max-width:990px;
+    height:auto;
+    display:block;
+    margin:0 auto}
+
+
+
+    @media (max-width: 768px) {
+    
+    .branding {
+        margin: 10px 0;
+    }
+
+    .brand-logo img {
+        max-width: 100px;
+        height: auto;
+    }
+
+    
+    .page-title {
+        font-size: 1.3rem;
+        padding: 0 8px;
+    }
+
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .about-image {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .about-description {
+        max-width: 90%;
+        text-align: center;
+    }
+
+  
+    .contact-form {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .contact-form button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,61 @@
+
+main {
+  max-width: 1006px;
+  margin: 12px auto 48px;
+  padding: 0 20px;
+  font-family: Rubik, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: #2a2a2a;
+}
+
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #6b6ca8;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+.description p {
+    max-width: 800px;
+    margin-bottom: 1em;
+  
+}
+
+
+
+
+.project-canva {
+  max-width: 1006px;
+  margin: 0 auto 48px;
+}
+.project-canva h2 {
+  text-align: center;
+  color: #6b6ca8;
+  margin-bottom: 12px;
+}
+.canva-wrap {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; 
+}
+.canva-wrap iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+@media (max-width: 900px) {
+  .project-images {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .project-images img { max-width: 420px; }
+}
+@media (max-width: 700px) {
+  .project-images {
+    grid-template-columns: 1fr;
+  }
+  .project-images img { max-width: 100%; }
+}

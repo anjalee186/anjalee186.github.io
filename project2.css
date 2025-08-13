@@ -1,0 +1,86 @@
+
+
+main {
+  max-width: 1006px;
+  margin: 12px auto 48px;
+  padding: 0 20px;
+  font-family: Rubik, Montserrat, system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+  color: #2a2a2a;
+}
+
+
+.project-title {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #6b6ca8;
+  margin: 16px 0 8px;
+  text-align: center;
+}
+
+.manual-description {
+  max-width: 900px;
+  margin: 0 auto 30px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  line-height: 1.5;
+}
+
+.flipbook-container {
+  max-width: 900px;       /* limit max width */
+  width: 100%;            /* allow it to shrink on smaller screens */
+  height: 600px;          /* set desired height */
+  margin: 20px auto;      /* center horizontally */
+  border: 1px solid lightgray;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.flipbook-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.manual {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.single-page {
+  max-width: 400px;
+  margin: 0 auto 40px;
+}
+
+.single-page img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+}
+
+.facing-pages-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.facing-pages-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .facing-pages-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .single-page {
+    max-width: 100%;
+  }
+}
