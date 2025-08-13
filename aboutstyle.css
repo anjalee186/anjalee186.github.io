@@ -190,80 +190,66 @@ h2 {
 
 
 
-   /* --- MOBILE RESPONSIVE FIXES FOR ABOUT PAGE (MAX-WIDTH: 768PX) --- */
-
-@media (max-width: 768px) {
-  /* Ensure header and navigation are centered and responsive */
-  .branding {
+  @media (max-width: 768px) {
+  /* Center-align all header elements */
+  .header-area {
     text-align: center;
-    margin: 10px 0;
-  }
-  
-  .brand-logo img {
-    width: 90px;
-  }
-  
-  .sub {
-    font-size: 0.75rem;
-  }
-  
-  .site-nav {
-    width: 100%;
-    margin: 0;
-    padding: 10px;
-    gap: 5px;
-    flex-wrap: wrap;
-    height: auto;
-    justify-content: center;
-  }
-  
-  .site-nav a {
-    padding: 6px 10px;
-    font-size: 0.9rem;
+    padding: 15px; /* Add some padding to prevent touching edges */
   }
 
-  /* Make the main content container responsive */
+  .site-nav {
+    display: flex;
+    justify-content: center; /* Center the navigation links */
+    width: 100%;
+    margin: 10px 0;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Make the about page content responsive */
   .about-container {
     padding: 10px;
-    margin: 0 auto;
-    max-width: 100%;
   }
 
-  /* Center the photo and text description */
   .about-photo {
+    width: 80%; /* Make the photo fluid */
     max-width: 250px;
     margin: 0 auto;
   }
 
   .description {
-    text-align: center;
-    padding: 0 10px;
+    font-size: 1rem;
+    text-align: center; /* Center the text description */
+    margin: 15px 10px;
   }
 
-  /* Adjust contact form for mobile */
+  /* Adjust form elements */
   .contact-form {
-    align-items: center;
+    padding: 0 10px;
   }
   
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
-    width: 90%;
+    width: 100%;
     max-width: 450px;
+    margin: 10px auto;
+    display: block; /* Ensure button is centered as a block element */
   }
 
-  /* Resize and position illustration to "kiss" the Send button */
+  /* Resize and position illustration */
   .illustration-area {
-    margin-top: -30px; /* Pulls the illustration up to overlap the button */
+    margin-top: -30px; /* Adjust this value if needed for the "kissing" effect */
     position: relative;
     text-align: center;
   }
-  
+
   .illustration-character {
-    width: clamp(250px, 80vw, 400px); /* Sets a fluid, but controlled, width */
+    width: 70%; /* Smaller, fluid width for the illustration */
+    max-width: 300px; /* A smaller maximum size */
     height: auto;
-    display: block;
     margin: 0 auto;
-    transform: translateY(0); /* Resets any conflicting transform rules */
+    display: block;
+    transform: translateY(0);
   }
 }
