@@ -180,57 +180,58 @@ main {
 
 @media (max-width: 768px) {
 
-  /* Kill horizontal scroll by ensuring nothing is wider than the viewport */
-  html, body { overflow-x: hidden; }
+  /* Undo any earlier overflow hiding that made edges look “cut” */
+  html, body { overflow-x: visible !important; }
   *, *::before, *::after { box-sizing: border-box; }
-  img { max-width: 100%; height: auto; display: block; }
+  img { display: block; max-width: 100%; height: auto; }
 
-  /* 1) HEADER — force center, neutralize any floats/offsets */
-  header, .site-header, .page-header {
-    position: static !important;
-    float: none !important;
-    left: auto !important; right: auto !important; transform: none !important;
+  /* 1) STOP SLICING: remove negative gutters and add safe side padding */
+  .row, [class*="row"] { margin-left: 0 !important; margin-right: 0 !important; }
+  .row > [class*="col"], [class*="row"] > [class*="col"], [class*="col-"] {
+    padding-left: 10px !important; padding-right: 10px !important;
+  }
+  /* generic containers for your grid/gallery */
+  .projects, .portfolio, .thumbnails, .gallery, .cards, .grid, .container, .container-fluid {
     width: 100% !important; max-width: 100% !important;
-    margin: 0 auto !important; padding: 12px 16px !important;
-    display: flex !important; flex-direction: column !important;
-    align-items: center !important; justify-content: center !important;
-    text-align: center !important;
+    padding-left: 10px !important; padding-right: 10px !important;
+  }
+  /* if you used CSS Grid, keep two per row with safe columns */
+  .grid, .thumbnails.grid, .gallery.grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;       /* smaller gap like you asked */
+  }
+  /* if you used flex cards instead of grid */
+  .thumbnails, .projects, .gallery, .cards {
+    display: flex !important; flex-wrap: wrap !important; justify-content: center;
+    gap: 8px !important;
+  }
+  .thumbnails > *, .projects > *, .gallery > *, .cards > * {
+    flex: 0 1 calc(50% - 12px) !important;
+  }
+  /* make the actual image fill its card so it doesn’t get clipped */
+  .project-card img, .thumbnail img, .card img, .grid > * img {
+    width: 100% !important; height: auto !important;
   }
 
-  /* Center typical title/tagline elements just in case they're not inside <header> */
-  h1, h2, h3, .site-title, .page-title, .tagline, .intro { 
-    text-align: center !important; 
-    margin-left: auto !important; margin-right: auto !important;
+  /* If you have decorative side rails/stripes, hide them on mobile (prevents overlay) */
+  [class*="rail"], [class*="stripe"], [class*="side-"], [class*="gutter"] {
+    display: none !important;
   }
 
-  /* Center the logo image specifically */
-  img[src$="images/logo.anjalee.png"] { 
-    margin: 0 auto 8px auto !important; 
-  }
-
-  /* 2) ILLUSTRATION — bigger + lightly overlaps the thumbnails */
-  img[src$="images/cat.illustraion.png"] {
-    width: clamp(320px, 82vw, 560px) !important; /* bigger on phones */
-    margin: 10px auto -12px auto !important;     /* “kiss” the first row */
+  /* 2) ILLUSTRATION — center it everywhere and make it bigger so it kisses the thumbs */
+  .illustration, .hero-illustration, .cat-illustration,
+  img[alt*="cat" i], img[src*="cat"] {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: clamp(340px, 86vw, 600px) !important;  /* bigger on phones */
+    margin-top: 10px !important;
+    margin-bottom: -12px !important;              /* slight overlap downwards */
     position: relative; z-index: 1;
   }
-
-  /* 3) PROJECT GRID — tighten gaps without slicing edges */
-  /* If you're using rows/cols, remove big negative gutters on mobile */
-  .row { margin-left: 0 !important; margin-right: 0 !important; }
-  .row > [class*="col"] { padding-left: 8px !important; padding-right: 8px !important; }
-
-  /* Generic containers that might hold your thumbnails */
-  .projects, .portfolio, .thumbnails, .gallery, .cards, .grid {
-    padding-left: 10px; padding-right: 10px;
-    gap: 8px !important;            /* less space between items */
-  }
-
-  /* Thumbnails themselves */
-  .project-card, .thumbnail, .card, .grid > *, 
-  .projects img, .thumbnails img, .gallery img {
-    width: 100% !important;         /* prevents slicing */
-    height: auto !important;
-    margin: 6px 0 !important;       /* smaller vertical gap */
+  /* also center its common wrappers (covers the About page too) */
+  .about, .about-section, .intro, .hero, .bio {
+    text-align: center !important;
   }
 }
