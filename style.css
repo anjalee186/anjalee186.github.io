@@ -178,60 +178,7 @@ main {
 }
 
 
-@media (max-width: 600px) {
-  /* Center the branding logo and subtitle */
-  .branding {
-    text-align: center;
-  }
-  
-  .brand-logo img {
-    max-width: 100px; /* shrink logo */
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-  
-  .sub {
-    text-align: center;
-    font-size: 0.85rem;
-    margin-top: 8px;
-    color: #a19fc7;
-  }
 
-  /* Shrink gallery thumbnails */
-  .gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    column-gap: 10px;
-    row-gap: 10px;
-    max-width: 100%;
-    padding: 0 10px;
-  }
-  
-  .card {
-    width: 100%; /* make cards responsive */
-    max-width: 140px; /* smaller max width */
-    height: auto; /* auto height */
-    margin-left: 0;
-  }
-  
-  .card img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Illustration spacing */
-  .illustration-area {
-    margin-top: 15px; /* add some gap */
-    text-align: center;
-  }
-
-  .illustration-character {
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-  }
-}
 @media (max-width: 768px) {
 
   /* 0) Prevent side scroll / cropping */
