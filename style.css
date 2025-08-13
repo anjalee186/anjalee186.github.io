@@ -179,59 +179,58 @@ main {
 
 
 @media (max-width: 768px) {
-  /* Branding */
-  .branding {
-    margin: 10px 0;
+  /* Center-align branding and navigation */
+  .branding,
+  .site-nav {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
   }
+  
   .brand-logo img {
     width: 90px;
   }
-  .sub {
-    font-size: 0.75rem;
-  }
-  
-  /* Navigation */
+
   .site-nav {
-    width: 100%;
-    height: auto;
-    margin: 0;
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 10px;
     padding: 10px;
-    border-radius: 0;
-  }
-  .site-nav a {
-    padding: 6px 10px;
-    font-size: 0.9rem;
+    background: #867fc2;
   }
   
-  /* Gallery */
-  main {
-    margin-top: 10px;
-  }
+  /* Two-column gallery layout */
   .gallery {
-    grid-template-columns: 1fr 1fr; /* Two equal columns */
-    column-gap: 10px;
-    row-gap: 10px;
-    padding: 0 10px;
-    max-width: none;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
   }
+  
   .card {
     width: 100%;
     height: auto;
     margin: 0;
   }
+
   .card img {
     width: 100%;
     height: auto;
   }
   
-  /* Illustration area */
+  /* Position the illustration to "kiss" the gallery */
   .illustration-area {
-    margin-top: 10px;
+    margin-top: -15px; /* Negative margin pulls the illustration up */
+    text-align: center;
   }
+  
   .illustration-character {
     width: clamp(300px, 90vw, 500px);
-    margin: 10px auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateY(0); /* Reset any previous transform */
   }
 }
