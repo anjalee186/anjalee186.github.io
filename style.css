@@ -232,48 +232,50 @@ main {
     margin: 0 auto;
   }
 }
-/* --- Mobile fix --- */
 @media (max-width: 768px) {
 
-
   html, body { overflow-x: hidden; }
-  * { box-sizing: border-box; }
+  *, *::before, *::after { box-sizing: border-box; }
   img, svg { max-width: 100%; height: auto; display: block; }
 
-  
-  header, .site-header, .page-header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+ 
+  header, .site-header, .masthead, .page-header {
+    display: grid !important;
+    place-items: center !important;
+    text-align: center !important;
   }
-  .page-title, .site-title, h1, h2 {
+  .site-title, .page-title, .page-titles, .logo, .logo img,
+  .subtitle, .tagline, .intro {
     text-align: center !important;
     margin-left: auto !important;
     margin-right: auto !important;
   }
 
-  .row { margin-left: 0 !important; margin-right: 0 !important; }
-  .row > [class*="col"] { padding-left: 10px !important; padding-right: 10px !important; }
+  nav, .site-nav, .main-nav, .menu, .navbar {
+    display: flex !important;
+    justify-content: center !important;
+  }
 
   
-  .portfolio, .projects, .thumbnails, [class*="grid"] {
-    padding-left: 10px; padding-right: 10px;
-  }
-  .thumbnail, .project-card, .projects .card, .thumbnails .card,
-  .projects img, .thumbnails img, [class*="grid"] img {
-    width: 100%;
-    height: auto;
-  }
-
-
-  .cat-illustration, .illustration, .hero-illustration, img[alt*="cat" i] {
-    width: clamp(220px, 62vw, 360px);   
-    margin: 8px auto -8px auto;         
+  .cat-illustration, .hero-illustration, .illustration,
+  img[alt*="cat" i] {
+    width: clamp(260px, 76vw, 440px) !important; 
+    margin: 10px auto -12px auto !important;     
+    position: relative;
+    z-index: 1;
   }
 
-  /* 4) Center the logo + tagline under it */
-  .logo, #logo, .logo img { margin: 8px auto; }
-  .tagline, .intro, .subtitle { text-align: center; margin: 4px auto; padding: 0 12px; }
+  
+  .projects, .portfolio, .thumbnails, .cards, .grid, .gallery {
+    gap: 10px !important;         
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .project-card, .thumbnail, .card, .grid > * {
+    margin: 6px 0 !important;      
+  }
+
+  
+  .row { margin-left: 0 !important; margin-right: 0 !important; }
+  .row > [class*="col"] { padding-left: 10px !important; padding-right: 10px !important; }
 }
