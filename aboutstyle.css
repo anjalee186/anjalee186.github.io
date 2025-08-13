@@ -190,67 +190,80 @@ h2 {
 
 
 
-   @media (max-width: 768px) {
-  /* Center-align branding and navigation */
-  .branding,
-  .site-nav {
+   /* --- MOBILE RESPONSIVE FIXES FOR ABOUT PAGE (MAX-WIDTH: 768PX) --- */
+
+@media (max-width: 768px) {
+  /* Ensure header and navigation are centered and responsive */
+  .branding {
     text-align: center;
-    width: 100%;
-    margin: 0 auto;
+    margin: 10px 0;
   }
   
   .brand-logo img {
     width: 90px;
   }
-
-  .site-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px;
-    background: #867fc2;
+  
+  .sub {
+    font-size: 0.75rem;
   }
   
-  /* Adjustments for the About page content */
+  .site-nav {
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+    gap: 5px;
+    flex-wrap: wrap;
+    height: auto;
+    justify-content: center;
+  }
+  
+  .site-nav a {
+    padding: 6px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Make the main content container responsive */
   .about-container {
     padding: 10px;
+    margin: 0 auto;
+    max-width: 100%;
   }
 
+  /* Center the photo and text description */
   .about-photo {
-    max-width: 200px;
-  }
-  
-  .description {
-    font-size: 1rem;
-    margin: 15px auto;
+    max-width: 250px;
+    margin: 0 auto;
   }
 
-  /* Contact form adjustments for better mobile display */
-  .contact-form {
-    margin-top: 20px;
+  .description {
+    text-align: center;
     padding: 0 10px;
   }
 
+  /* Adjust contact form for mobile */
+  .contact-form {
+    align-items: center;
+  }
+  
   .contact-form input,
   .contact-form textarea,
   .contact-form button {
-    width: 100%; /* Make form elements fill the full width */
-    max-width: 400px; /* A reasonable max-width for smaller screens */
+    width: 90%;
+    max-width: 450px;
   }
 
-  /* Illustration positioning to "kiss" the Send button */
+  /* Resize and position illustration to "kiss" the Send button */
   .illustration-area {
-    margin-top: -30px; /* Use a negative margin to pull the illustration up */
+    margin-top: -30px; /* Pulls the illustration up to overlap the button */
     position: relative;
     text-align: center;
   }
   
   .illustration-character {
-    width: clamp(250px, 70vw, 400px); /* Smaller size for the illustration */
+    width: clamp(250px, 80vw, 400px); /* Sets a fluid, but controlled, width */
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: translateY(0);
+    transform: translateY(0); /* Resets any conflicting transform rules */
   }
 }
