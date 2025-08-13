@@ -249,7 +249,7 @@ h2 {
 
   /* Precise positioning for the illustration */
   .illustration-area {
-    margin-top: 0px !important; /* Remove negative margin completely */
+    margin-top: -4px !important; /* Remove negative margin completely */
     position: relative !important;
     text-align: center !important;
     padding-bottom: 5px !important; /* Add a small padding to push the illustration down */
