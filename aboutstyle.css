@@ -190,49 +190,59 @@ h2 {
 
 
 
-    @media (max-width: 768px) {
-    
-    .branding {
-        margin: 10px 0;
-    }
-
-    .brand-logo img {
-        max-width: 100px;
-        height: auto;
-    }
-
-    
-    .page-title {
-        font-size: 1.3rem;
-        padding: 0 8px;
-    }
-
-    .about-container {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .about-image {
-        max-width: 90%;
-        height: auto;
-    }
-
-    .about-description {
-        max-width: 90%;
-        text-align: center;
-    }
-
+   @media (max-width: 768px) {
+  /* Center-align branding and navigation */
+  .branding,
+  .site-nav {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+  }
   
-    .contact-form {
-        width: 90%;
-        margin: 20px auto;
-    }
+  .brand-logo img {
+    width: 90px;
+  }
 
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form button {
-        width: 100%;
-    }
+  .site-nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+    background: #867fc2;
+  }
+  
+  /* Two-column gallery layout */
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    gap: 10px;
+    padding: 10px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  
+  .card {
+    width: 100%;
+    height: auto;
+    margin: 0;
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* Position the illustration to "kiss" the gallery */
+  .illustration-area {
+    margin-top: -15px; /* Negative margin pulls the illustration up */
+    text-align: center;
+  }
+  
+  .illustration-character {
+    width: clamp(300px, 90vw, 500px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    transform: translateY(0); /* Reset any previous transform */
+  }
 }
