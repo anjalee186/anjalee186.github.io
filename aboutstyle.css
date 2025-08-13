@@ -54,8 +54,7 @@ a {
     margin: 4px 0 0;
 }
 
-/* Nav wrap & title */
-/* The page-title sits visually on top of the lilac header */
+
 .nav-wrap {
     text-align: center;
     margin-bottom: 1px;
@@ -155,8 +154,8 @@ h2 {
 }
 
 .contact-form button {
-    width: 80%;              /* same as input and textarea */
-    max-width: 500px;        /* same as input and textarea */
+    width: 80%;              
+    max-width: 500px;       
     padding: 10px;
     background-color:#867fc2;
     color: white;
@@ -191,7 +190,7 @@ h2 {
 
 
 @media (max-width: 768px) {
-  /* Center-align header and navigation */
+ 
   .branding,
   .site-nav {
     text-align: center;
@@ -211,7 +210,7 @@ h2 {
     padding: 10px;
   }
   
-  /* Responsive about page content */
+
   .about-container {
     padding: 10px;
     max-width: 100%;
@@ -228,7 +227,6 @@ h2 {
     margin: 15px 10px;
   }
 
-  /* Contact form adjustments */
   .contact-form {
     padding: 0 10px;
   }
@@ -242,9 +240,9 @@ h2 {
     display: block;
   }
 
-  /* Precise positioning for the illustration to "kiss" the button */
+  
   .illustration-area {
-    margin-top: -5px; /* Minimal negative margin to prevent overlap */
+    margin-top: -5px; 
     position: relative;
     text-align: center;
   }

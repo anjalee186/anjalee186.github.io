@@ -179,7 +179,7 @@ main {
 
 
 @media (max-width: 768px) {
-  /* Center-align branding and navigation */
+
   .branding,
   .site-nav {
     text-align: center;
@@ -200,7 +200,7 @@ main {
     background: #867fc2;
   }
   
-  /* Two-column gallery layout */
+  
   .gallery {
     grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
     gap: 10px;
@@ -220,9 +220,9 @@ main {
     height: auto;
   }
   
-  /* Position the illustration to "kiss" the gallery */
+
   .illustration-area {
-    margin-top: -15px; /* Negative margin pulls the illustration up */
+    margin-top: -15px; 
     text-align: center;
   }
   
@@ -231,6 +231,6 @@ main {
     height: auto;
     display: block;
     margin: 0 auto;
-    transform: translateY(0); /* Reset any previous transform */
+    transform: translateY(0); 
   }
 }
