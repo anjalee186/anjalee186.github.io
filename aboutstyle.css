@@ -236,13 +236,11 @@ h2 {
     margin: 10px auto;
     display: block; /* Ensure button is centered as a block element */
   }
-
-  /* Resize and position illustration */
-  .illustration-area {
-    margin-top: 2px; /* Adjust this value if needed for the "kissing" effect */
-    position: relative;
-    text-align: center;
-  }
+.illustration-area {
+  margin-top: -10px; /* Reduced negative margin to prevent overlap */
+  position: relative;
+  text-align: center;
+}
 
   .illustration-character {
     width: 70%; /* Smaller, fluid width for the illustration */
