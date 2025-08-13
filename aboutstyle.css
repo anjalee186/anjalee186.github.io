@@ -239,7 +239,7 @@ h2 {
 
   /* Resize and position illustration */
   .illustration-area {
-    margin-top: -30px; /* Adjust this value if needed for the "kissing" effect */
+    margin-top: 2px; /* Adjust this value if needed for the "kissing" effect */
     position: relative;
     text-align: center;
   }
