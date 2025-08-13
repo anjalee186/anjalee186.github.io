@@ -191,39 +191,44 @@ h2 {
 
 
   @media (max-width: 768px) {
-  /* Center-align all header elements */
-  .header-area {
+  /* Center-align header and navigation */
+  .branding,
+  .site-nav {
     text-align: center;
-    padding: 15px; /* Add some padding to prevent touching edges */
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .brand-logo img {
+    width: 90px;
   }
 
   .site-nav {
     display: flex;
-    justify-content: center; /* Center the navigation links */
-    width: 100%;
-    margin: 10px 0;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 10px;
+    padding: 10px;
   }
-
-  /* Make the about page content responsive */
+  
+  /* Responsive about page content */
   .about-container {
     padding: 10px;
+    max-width: 100%;
   }
 
   .about-photo {
-    width: 80%; /* Make the photo fluid */
     max-width: 250px;
     margin: 0 auto;
   }
-
+  
   .description {
     font-size: 1rem;
-    text-align: center; /* Center the text description */
+    text-align: center;
     margin: 15px 10px;
   }
 
-  /* Adjust form elements */
+  /* Contact form adjustments */
   .contact-form {
     padding: 0 10px;
   }
@@ -234,20 +239,21 @@ h2 {
     width: 100%;
     max-width: 450px;
     margin: 10px auto;
-    display: block; /* Ensure button is centered as a block element */
-  }
-.illustration-area {
-  margin-top: -10px; /* Reduced negative margin to prevent overlap */
-  position: relative;
-  text-align: center;
-}
-
-  .illustration-character {
-    width: 70%; /* Smaller, fluid width for the illustration */
-    max-width: 300px; /* A smaller maximum size */
-    height: auto;
-    margin: 0 auto;
     display: block;
+  }
+
+  /* Precise positioning for the illustration to "kiss" the button */
+  .illustration-area {
+    margin-top: -5px; /* Minimal negative margin to prevent overlap */
+    position: relative;
+    text-align: center;
+  }
+  
+  .illustration-character {
+    width: clamp(250px, 80vw, 400px);
+    height: auto;
+    display: block;
+    margin: 0 auto;
     transform: translateY(0);
   }
 }
