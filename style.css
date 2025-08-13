@@ -179,59 +179,53 @@ main {
 
 
 @media (max-width: 768px) {
-
-  /* Undo any earlier overflow hiding that made edges look “cut” */
-  html, body { overflow-x: visible !important; }
-  *, *::before, *::after { box-sizing: border-box; }
-  img { display: block; max-width: 100%; height: auto; }
-
-  /* 1) STOP SLICING: remove negative gutters and add safe side padding */
-  .row, [class*="row"] { margin-left: 0 !important; margin-right: 0 !important; }
-  .row > [class*="col"], [class*="row"] > [class*="col"], [class*="col-"] {
-    padding-left: 10px !important; padding-right: 10px !important;
+  /* Guard rails so nothing is wider than the viewport */
+  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
+  body { margin: 0; }
+  #page, .wrapper, .container, .container-fluid, main, section {
+    max-width: 100vw !important;
   }
-  /* generic containers for your grid/gallery */
-  .projects, .portfolio, .thumbnails, .gallery, .cards, .grid, .container, .container-fluid {
-    width: 100% !important; max-width: 100% !important;
-    padding-left: 10px !important; padding-right: 10px !important;
+
+  /* 1) HEADER — hard-center and neutralize any pushes */
+  header, .site-header, .page-header {
+    position: relative !important;
+    left: auto !important; right: auto !important; transform: none !important;
+    float: none !important; width: 100% !important;
+    display: grid !important; place-items: center !important;
+    text-align: center !important; padding: 12px 14px !important;
   }
-  /* if you used CSS Grid, keep two per row with safe columns */
-  .grid, .thumbnails.grid, .gallery.grid {
+  header * {
+    text-align: center !important;
+    margin-left: auto !important; margin-right: auto !important;
+  }
+
+  /* 2) THUMBNAILS — remove negative gutters & add safe side padding */
+  .row { margin-left: 0 !important; margin-right: 0 !important; }
+  .row > [class*="col"] { padding-left: 12px !important; padding-right: 12px !important; }
+
+  .projects, .portfolio, .thumbnails, .gallery, .cards, .grid {
+    padding-left: 12px !important; padding-right: 12px !important;
+    margin-left: 0 !important; margin-right: 0 !important;
+    max-width: 100vw !important;
+  }
+
+  /* Works whether you used grid or flex */
+  .grid { 
     display: grid !important;
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 8px !important;       /* smaller gap like you asked */
+    gap: 10px !important;
   }
-  /* if you used flex cards instead of grid */
   .thumbnails, .projects, .gallery, .cards {
     display: flex !important; flex-wrap: wrap !important; justify-content: center;
-    gap: 8px !important;
+    gap: 10px !important;
   }
   .thumbnails > *, .projects > *, .gallery > *, .cards > * {
     flex: 0 1 calc(50% - 12px) !important;
   }
-  /* make the actual image fill its card so it doesn’t get clipped */
   .project-card img, .thumbnail img, .card img, .grid > * img {
-    width: 100% !important; height: auto !important;
+    width: 100% !important; height: auto !important; display: block !important;
   }
 
-  /* If you have decorative side rails/stripes, hide them on mobile (prevents overlay) */
-  [class*="rail"], [class*="stripe"], [class*="side-"], [class*="gutter"] {
-    display: none !important;
-  }
-
-  /* 2) ILLUSTRATION — center it everywhere and make it bigger so it kisses the thumbs */
-  .illustration, .hero-illustration, .cat-illustration,
-  img[alt*="cat" i], img[src*="cat"] {
-    display: block !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: clamp(340px, 86vw, 600px) !important;  /* bigger on phones */
-    margin-top: 10px !important;
-    margin-bottom: -12px !important;              /* slight overlap downwards */
-    position: relative; z-index: 1;
-  }
-  /* also center its common wrappers (covers the About page too) */
-  .about, .about-section, .intro, .hero, .bio {
-    text-align: center !important;
-  }
+  /* Hide any decorative side rails that can overlap content on mobile */
+  [class*="rail"], [class*="stripe"], [class*="side-"] { display: none !important; }
 }
