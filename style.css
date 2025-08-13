@@ -179,53 +179,52 @@ main {
 
 
 @media (max-width: 768px) {
-  /* Guard rails so nothing is wider than the viewport */
-  html, body { width: 100%; max-width: 100%; overflow-x: hidden; }
-  body { margin: 0; }
-  #page, .wrapper, .container, .container-fluid, main, section {
+  /* Safe side padding so nothing touches/cuts at the edges */
+  main, .content, body > main, body > .content {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     max-width: 100vw !important;
   }
 
-  /* 1) HEADER — hard-center and neutralize any pushes */
-  header, .site-header, .page-header {
-    position: relative !important;
-    left: auto !important; right: auto !important; transform: none !important;
-    float: none !important; width: 100% !important;
-    display: grid !important; place-items: center !important;
-    text-align: center !important; padding: 12px 14px !important;
-  }
-  header * {
-    text-align: center !important;
-    margin-left: auto !important; margin-right: auto !important;
-  }
-
-  /* 2) THUMBNAILS — remove negative gutters & add safe side padding */
+  /* If you used Bootstrap-like rows, remove negative gutters */
   .row { margin-left: 0 !important; margin-right: 0 !important; }
-  .row > [class*="col"] { padding-left: 12px !important; padding-right: 12px !important; }
+  .row > [class*="col"] { padding-left: 10px !important; padding-right: 10px !important; }
 
-  .projects, .portfolio, .thumbnails, .gallery, .cards, .grid {
-    padding-left: 12px !important; padding-right: 12px !important;
-    margin-left: 0 !important; margin-right: 0 !important;
-    max-width: 100vw !important;
+  /* === Project thumbnails on the homepage ===
+     Your tiles are anchor tags that link to project pages. Make them a tidy 2-col grid. */
+  a[href^="project"] {
+    display: inline-block !important;
+    vertical-align: top;
+    width: calc(50% - 12px) !important;  /* two per row on phones */
+    margin: 6px !important;              /* small, even gap */
+    box-sizing: border-box;
+  }
+  /* If a <img> is inside the link, scale it to the tile */
+  a[href^="project"] img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  /* If the link itself uses a background image, keep it inside the box */
+  a[href^="project"][style*="background"],
+  a[href^="project"].thumb, 
+  a[href^="project"].thumbnail {
+    background-position: center !important;
+    background-size: cover !important;   /* or try 'contain' if you prefer full image */
+    background-repeat: no-repeat !important;
+    aspect-ratio: 16 / 9;                /* keeps a nice card shape */
+    border-radius: 8px;
   }
 
-  /* Works whether you used grid or flex */
-  .grid { 
-    display: grid !important;
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-    gap: 10px !important;
-  }
-  .thumbnails, .projects, .gallery, .cards {
-    display: flex !important; flex-wrap: wrap !important; justify-content: center;
-    gap: 10px !important;
-  }
-  .thumbnails > *, .projects > *, .gallery > *, .cards > * {
-    flex: 0 1 calc(50% - 12px) !important;
-  }
-  .project-card img, .thumbnail img, .card img, .grid > * img {
-    width: 100% !important; height: auto !important; display: block !important;
-  }
-
-  /* Hide any decorative side rails that can overlap content on mobile */
+  /* Keep decorative side rails (if any) from overlapping on phones */
   [class*="rail"], [class*="stripe"], [class*="side-"] { display: none !important; }
+
+  /* Cat illustration: keep as you liked and centered everywhere */
+  img[src$="images/cat.illustraion.png"] {
+    display: block !important;
+    margin: 10px auto -12px auto !important;  /* gentle “kiss” to thumbnails */
+    width: clamp(340px, 85vw, 580px) !important;
+  }
 }
