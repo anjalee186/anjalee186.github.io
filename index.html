@@ -21,6 +21,10 @@
     <p class="sub">AD (soon to be) × Graphic designer × Illustrator × Animator × UX UI</p>
   </header>
 
+  <div class="sub-container">
+  <p class="sub">AD (soon to be) × Graphic designer × Illustrator × Animator × UX UI</p>
+</div>
+
   <section class="nav-wrap" aria-label="Page header">
     
 
@@ -90,6 +94,21 @@
     opacity: 0,
     duration: 1,
     ease: "bounce.out"
+  });
+</script>
+
+
+<script>
+  // Animate subtitle continuously from right to left
+  gsap.to(".sub", {
+    xPercent: -100,       // move fully to the left
+    duration: 10,         // speed (increase/decrease for faster/slower)
+    ease: "linear",       // smooth continuous motion
+    repeat: -1,           // infinite loop
+    repeatDelay: 0,       // no pause between repeats
+    modifiers: {
+      x: gsap.utils.unitize(x => parseFloat(x) % window.innerWidth) // looping effect
+    }
   });
 </script>
 
