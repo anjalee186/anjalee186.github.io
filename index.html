@@ -5,44 +5,20 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Anjalee — Portfolio (Homepage)</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="responsive.css">
 </head>
 
-
-
-<script>
-  // Simple bounce-in animation when page loads
-  gsap.from(".brand-logo img", {
-    duration: 1.5,
-    y: -100,
-    opacity: 0,
-    ease: "bounce.out"
-  });
-
-  // Add a subtle hover effect
-  const logo = document.querySelector(".brand-logo img");
-  logo.addEventListener("mouseenter", () => {
-    gsap.to(logo, { scale: 1.1, rotate: 5, duration: 0.3, ease: "power1.out" });
-  });
-  logo.addEventListener("mouseleave", () => {
-    gsap.to(logo, { scale: 1, rotate: 0, duration: 0.3, ease: "power1.inOut" });
-  });
-</script>
-
-
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- Branding logo -->
   <header class="branding" role="banner">
-   <div class="brand-logo">
-  <img src="images/logo.anjalee.png" alt="Anjalee logo">
-</div>
+    <figure class="brand-logo" aria-hidden="true">
+      <img src="images/logo.anjalee.png" alt="My logo">
+    </figure>
     <p class="sub">AD (soon to be) × Graphic designer × Illustrator × Animator × UX UI</p>
   </header>
 
@@ -103,5 +79,36 @@
       <img class="illustration-character" src="images/cat.illustraion.png" alt="Illustration of Anjalee with cat">
     </section>
   </main>
+
+
+       <script>
+document.addEventListener('DOMContentLoaded', function () {
+  const logo = document.querySelector('.brand-logo img');
+  if (!logo) { console.warn('Logo not found: .brand-logo img'); return; }
+
+  // set transform origin once
+  gsap.set(logo, { transformOrigin: '50% 50%' });
+
+  // entrance animation
+  gsap.from(logo, {
+    y: -80,
+    opacity: 0,
+    duration: 0.9,
+    ease: 'bounce.out'
+  });
+
+  // subtle hover / tap feedback
+  const onEnter = () => gsap.to(logo, { scale: 1.08, rotate: 3, duration: 0.25, ease: 'power1.out' });
+  const onLeave = () => gsap.to(logo, { scale: 1, rotate: 0, duration: 0.25, ease: 'power1.inOut' });
+
+  // works for mouse + touch
+  logo.addEventListener('pointerenter', onEnter);
+  logo.addEventListener('pointerleave', onLeave);
+});
+</script>
+
+
+
+
 </body>
 </html>
