@@ -48,24 +48,12 @@ a {
     justify-content: center;
 }
 
+
 .sub {
-  font-size: 0.9rem;
-  color: #a19fc7;
-  white-space: nowrap;   /* prevent wrapping */
-  overflow: hidden;      /* hide text outside container */
-  display: inline-block;
-}
-
-.sub-container {
-  width: 100%;          /* take full width */
-  overflow: hidden;      /* hides overflow */
-}
-
-/*.sub {
     font-size: .85rem;
     color: #a19fc7;
     margin: 4px 0 0;
-}*/
+}
 
 
 .nav-wrap {
